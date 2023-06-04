@@ -1,6 +1,7 @@
 package com.apple.spring6.bean.test;
 
 import com.apple.spring6.bean.User;
+import com.apple.spring6.jdbc.MyDataSource;
 import com.apple.spring6.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -11,6 +12,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @ date 2023/6/2 - 13:55
  */
 public class firstSpringTest {
+
+
+    @Test
+    public void testProperties() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        MyDataSource ds = context.getBean("ds", MyDataSource.class);
+        System.out.println(ds);
+    }
+
 
     @Test
     public void testSpringCode() {
